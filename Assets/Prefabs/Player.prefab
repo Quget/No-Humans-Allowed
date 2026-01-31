@@ -57,6 +57,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 6a84f9aa372d73f498ff2f5569f84477, type: 3}
   dashSprite: {fileID: 21300000, guid: 665c8b5b2e6e5764e8aa245a56b4357f, type: 3}
   equipSprite: {fileID: 21300000, guid: 91a7335d09baf684fb16bbe4f87c77e1, type: 3}
+  deathSprite: {fileID: -5162265511091051105, guid: 37aa4fb3a0cdcb440be072485a2c8c80, type: 3}
   cameraThatFollows: {fileID: 0}
   dieSound: {fileID: 0}
   maskSpriteRenderer: {fileID: 6459938826444312775}

@@ -29,6 +29,9 @@ public class Player : MonoBehaviour
 	[SerializeField]
 	private Sprite equipSprite;
 
+    [SerializeField]
+    private Sprite deathSprite;
+
 	[SerializeField]
     private CameraThatFollowsATransform cameraThatFollows;
 
@@ -163,9 +166,9 @@ public class Player : MonoBehaviour
         rigidbody2D.linearVelocity = Vector2.zero; // Stop moving
         dieSound?.Play();
         // Maybe trigger a reload or game over UI here
-
-        // make the player spin
-        rigidbody2D.freezeRotation = false;
+        SetSprite(deathSprite);
+		// make the player spin
+		rigidbody2D.freezeRotation = false;
         rigidbody2D.AddTorque(10f, ForceMode2D.Impulse);
         rigidbody2D.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
 
@@ -174,10 +177,10 @@ public class Player : MonoBehaviour
 
     private void StopDeathSpin()
     {
-        
         rigidbody2D.linearDamping = 10f;
         rigidbody2D.angularDamping = 10f;
-    }
+        transform.rotation = Quaternion.Euler(0, 0, 90);
+	}
 
     private void UpdateMasterLanePosition()
 	{
