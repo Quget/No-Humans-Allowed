@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		if (currentLane != null && currentLane.IsTransformPastLaneEnd(transform))
+		if (currentLane != null && MasterLane.Instance.IsTransformPastLaneEnd(transform))
 		{
 			End();
 			return;
@@ -82,6 +82,8 @@ public class Player : MonoBehaviour
 				SetIdleSprite();
 			}
 		}
+
+        UpdateMasterLanePosition();
     }
 	private void FixedUpdate()
 	{
@@ -131,6 +133,17 @@ public class Player : MonoBehaviour
 		Debug.Log("You die");
 	}
 
+	private void UpdateMasterLanePosition()
+	{
+		MasterLane lane = MasterLane.Instance;
+
+		if (lane != null && currentLane != null)
+		{
+			float progress = currentLane.GetLanePosition(transform.position);
+			lane.SetCurrentProgress(progress);
+        }
+    }
+
     private void Movement()
     {
         if(currentLane != null)
@@ -148,9 +161,9 @@ public class Player : MonoBehaviour
 		SetSprite(dashSprite);
 
 		//Todo get race of group.
-		var groupRace = RacesEnumerator.FishFolk;
-		//try use mask
-		if (!selectedMasks.TryUseMask(groupRace))
+		var groupRace = targetLane.GetCrowdAtPosition(targetLane.GetLanePosition(transform.position));
+        //try use mask
+        if (!groupRace.Item1 || !selectedMasks.TryUseMask(groupRace.Item2.CrowdRace))
 		{
 			Die();
 		}

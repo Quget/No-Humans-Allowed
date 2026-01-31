@@ -74,6 +74,10 @@ public class MasterLane : MonoBehaviour
         }
     }
 
+    public bool IsTransformPastLaneEnd(Transform otherTransform)
+    {
+        return otherTransform.position.x > transform.position.x + LaneLength;
+    }
 
     private void OnDrawGizmos()
 	{

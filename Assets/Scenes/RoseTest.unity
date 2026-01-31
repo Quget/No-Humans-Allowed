@@ -542,6 +542,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace1a2c1cf7f9154e9146953880ab18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crowd
+  CrowdLength: 1
+  IsWalking: 0
+  IsPreviewing: 0
+  CrowdRace: 0
   speed: 0.5
 --- !u!4 &175018129
 Transform:
@@ -1684,6 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6aa14f0bde1c464fb4251b9ea1cee89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lane
+  CrowdsAssignedToLane: []
   laneLength: 30
 --- !u!1 &942595401
 GameObject:
@@ -1791,6 +1796,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1099613411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099613413}
+  - component: {fileID: 1099613412}
+  m_Layer: 0
+  m_Name: MASTERLANE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1099613412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099613411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6edb8bc5ca50b4c8dd636e6b540e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MasterLane
+  IsAtEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentProgress: 0
+  LaneLength: 40
+  IsAutoPlaying: 0
+  ReplaySpeed: 10
+--- !u!4 &1099613413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099613411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.48, y: -7.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1879961804}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1129119330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2089,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace1a2c1cf7f9154e9146953880ab18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crowd
+  CrowdLength: 1
+  IsWalking: 0
+  IsPreviewing: 0
+  CrowdRace: 0
   speed: 1
 --- !u!4 &1235170488
 Transform:
@@ -2098,6 +2159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6aa14f0bde1c464fb4251b9ea1cee89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lane
+  CrowdsAssignedToLane: []
   laneLength: 30
 --- !u!1 &1406500040
 GameObject:
@@ -2506,6 +2568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6aa14f0bde1c464fb4251b9ea1cee89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lane
+  CrowdsAssignedToLane: []
   laneLength: 30
 --- !u!1 &1752461602
 GameObject:
@@ -2810,6 +2873,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1879961803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879961804}
+  - component: {fileID: 1879961805}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1879961804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879961803}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1099613413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1879961805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879961803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90788929a7ac714388cb87832da27a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowdTrigger
+  crowdsToTrigger:
+  - {fileID: 1235170487}
 --- !u!1 &2021832343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,6 +3054,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace1a2c1cf7f9154e9146953880ab18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crowd
+  CrowdLength: 1
+  IsWalking: 0
+  IsPreviewing: 0
+  CrowdRace: 0
   speed: 0.5
 --- !u!4 &2038159759
 Transform:
@@ -26739,3 +26852,4 @@ SceneRoots:
   - {fileID: 1406500042}
   - {fileID: 1560127096560615067}
   - {fileID: 2043865121}
+  - {fileID: 1099613413}
