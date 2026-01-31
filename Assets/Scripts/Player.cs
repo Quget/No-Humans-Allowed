@@ -32,10 +32,16 @@ public class Player : MonoBehaviour
 	[SerializeField]
     private CameraThatFollowsATransform cameraThatFollows;
 
-	[SerializeField]
-	private AudioSource dieSound;
+    [SerializeField]
+    private AudioSource dieSound;
 
-	private SelectedMasks selectedMasks;
+    [SerializeField]
+    private SpriteRenderer maskSpriteRenderer;
+
+    [SerializeField]
+    private RaceMaskSprites[] raceMaskSprites;
+
+    private SelectedMasks selectedMasks;
 
     private bool isDead;
 
@@ -206,9 +212,13 @@ public class Player : MonoBehaviour
         // CHECK MASK HERE
         float progressAtTarget = targetLane.GetLanePosition(transform.position);
         var groupRace = targetLane.GetCrowdAtPosition(progressAtTarget);
+        if (groupRace.Item1)
+        {
+            UpdateMaskSprite(groupRace.Item2.CrowdRace);
+		}
 
-        // If there's no crowd to move into, OR we fail to use the mask, we die.
-        if (!groupRace.Item1 || !selectedMasks.TryUseMask(groupRace.Item2.CrowdRace))
+	    // If there's no crowd to move into, OR we fail to use the mask, we die.
+	    if (!groupRace.Item1 || !selectedMasks.TryUseMask(groupRace.Item2.CrowdRace))
         {
             Die();
         }
@@ -230,5 +240,22 @@ public class Player : MonoBehaviour
 	public void OnMaxMasksReached()
 	{
 		StartCoroutine(DelayedStart());
+	}
+
+    public void UpdateMaskSprite(RacesEnumerator race)
+    {
+        var raceMask = raceMaskSprites.FirstOrDefault(rms => rms.Race == race);
+        if (raceMask != null && maskSpriteRenderer != null)
+        {
+            maskSpriteRenderer.sprite = raceMask.MaskSprite;
+		}
+	}
+
+	public void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Die();
+        }
 	}
 }

@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectedMasks : MonoBehaviour
 {
@@ -45,8 +46,10 @@ public class SelectedMasks : MonoBehaviour
 		if (masks.Count >= maxMaskCount)
 		{
             Debug.Log("Max masks reached");
-			//fire event for playerthat max masks reached
+            //fire event for playerthat max masks reached
             FindFirstObjectByType<Player>()?.SendMessage("OnMaxMasksReached", SendMessageOptions.DontRequireReceiver);
+			maskSlotGrid.GetComponent<GridLayoutGroup>().enabled = false;
+
 			return true;
 		}
         return false;
