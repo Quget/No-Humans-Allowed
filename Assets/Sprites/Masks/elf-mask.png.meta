@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8f03ba51e9323d04f84237be658abc7c
+guid: c2255644a9bbe4e468079b2f24fd6050
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3186404002204951254
-    second: Orcish_0
+      213: -6415412525392764180
+    second: elf-mask_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orcish_0
+      name: elf-mask_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
-        height: 64
+        y: 41
+        width: 256
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d22f46ce81683c20800000000000000
-      internalID: 3186404002204951254
+      spriteID: ce26f586c40e7f6a0800000000000000
+      internalID: -6415412525392764180
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Orcish_0: 3186404002204951254
+      elf-mask_0: -6415412525392764180
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 974ac26d3ffd88148a8bc51b27372faa
+guid: 2317c0d1c14e21e4eaae6ad54613edbe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3939655771821055063
-    second: Elvish_0
+      213: -7977066102764578143
+    second: ogre-mask_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Elvish_0
+      name: ogre-mask_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 31
+        y: 38
+        width: 193
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75c16b02d087ca630800000000000000
-      internalID: 3939655771821055063
+      spriteID: 1aa58e2d4a4cb4190800000000000000
+      internalID: -7977066102764578143
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Elvish_0: 3939655771821055063
+      ogre-mask_0: -7977066102764578143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

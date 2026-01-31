@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ad6bed13de4003a4eb91930b0214fbf6
+guid: 3820702a7e6d10247a2377aa9192d4f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7337696738220592793
-    second: FishFolk_0
+      213: -7816067226506142972
+    second: dwarf-mask_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FishFolk_0
+      name: dwarf-mask_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 46
+        y: 33
+        width: 164
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 761b1d081b34b2a90800000000000000
-      internalID: -7337696738220592793
+      spriteID: 40b578fc440c78390800000000000000
+      internalID: -7816067226506142972
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FishFolk_0: -7337696738220592793
+      dwarf-mask_0: -7816067226506142972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

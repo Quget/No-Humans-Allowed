@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 61bd01459b4818f499a3b2dd5a5ba605
+guid: 0eaf03886f8a04d408e49d5e6697fd41
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 544894233855022779
-    second: Dwarven_0
+      213: 2931446489726005408
+    second: fish-mask_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dwarven_0
+      name: fish-mask_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 10
+        y: 27
+        width: 238
+        height: 205
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb656113b6adf8700800000000000000
-      internalID: 544894233855022779
+      spriteID: 0a03f2a0d079ea820800000000000000
+      internalID: 2931446489726005408
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dwarven_0: 544894233855022779
+      fish-mask_0: 2931446489726005408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
