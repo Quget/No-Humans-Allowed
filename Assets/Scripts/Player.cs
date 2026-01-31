@@ -162,7 +162,9 @@ public class Player : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
-        Debug.Log("You die");
+        maskSpriteRenderer.sprite = null;
+
+		Debug.Log("You die");
         rigidbody2D.linearVelocity = Vector2.zero; // Stop moving
         dieSound?.Play();
         // Maybe trigger a reload or game over UI here
@@ -215,7 +217,10 @@ public class Player : MonoBehaviour
         // CHECK MASK HERE
         float progressAtTarget = targetLane.GetLanePosition(transform.position);
         var groupRace = targetLane.GetCrowdAtPosition(progressAtTarget);
-        if (groupRace.Item1)
+
+        Debug.Log($"{targetLane.name} has crowd: {groupRace.Item1}, {groupRace.Item2?.CrowdRace}");
+
+		if (groupRace.Item1)
         {
             UpdateMaskSprite(groupRace.Item2.CrowdRace);
 		}
@@ -227,7 +232,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SetIdleSprite()
+
+	private void SetIdleSprite()
 	{
 		SetSprite(idleSprite);
 	}

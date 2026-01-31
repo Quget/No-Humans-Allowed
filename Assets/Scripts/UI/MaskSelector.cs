@@ -1,9 +1,13 @@
+using TMPro;
 using UnityEngine;
 
 public class MaskSelector : MonoBehaviour
 {
     [SerializeField]
     private SelectedMasks selectedMasks;
+
+    [SerializeField]
+    private TextMeshProUGUI titleText;
 
     void Awake()
     {
@@ -12,7 +16,8 @@ public class MaskSelector : MonoBehaviour
 
     public void Open()
     {
-        gameObject.SetActive(true);
+        UpdateText();
+		gameObject.SetActive(true);
     }
 
     public void SelectMask(int race)
@@ -20,7 +25,14 @@ public class MaskSelector : MonoBehaviour
         if (selectedMasks.AddMaskSlot((RacesEnumerator)race))
         {
             Close();
-		}
+        }
+        UpdateText();
+
+	}
+
+    private void UpdateText()
+    {
+        titleText.text = $"Select a Mask ({selectedMasks.MasksCount}/{LevelManager.Instance.MaxMaskCount})";
 	}
 
     public void Close()

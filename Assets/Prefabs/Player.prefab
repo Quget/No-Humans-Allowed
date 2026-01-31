@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 8
-  forceMode: 20
+  forceMode: 30
   equipDuration: 0.15
   rigidbody2D: {fileID: 2123113235427089081}
   spriteRenderer: {fileID: 7573108959156573369}

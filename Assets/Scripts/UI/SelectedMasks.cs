@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,9 +7,6 @@ using UnityEngine.UI;
 
 public class SelectedMasks : MonoBehaviour
 {
-	[SerializeField]
-	private int maxMaskCount = 8;
-
 	[SerializeField]
     private MaskSlot maskSlotPrefab;
 
@@ -20,12 +18,9 @@ public class SelectedMasks : MonoBehaviour
 
 	private List<MaskSlot> masks = new List<MaskSlot>();
 
-    public void SetMaxMaskCount(int count)
-    {
-        maxMaskCount = count;
-    }
+    public int MasksCount => masks.Count;
 
-    public bool TryUseMask(RacesEnumerator race)
+	public bool TryUseMask(RacesEnumerator race)
     {
         var mask = masks.FirstOrDefault(x => x.Race == race);
         if(mask != null)
@@ -43,16 +38,21 @@ public class SelectedMasks : MonoBehaviour
         masks.Add(maskSlot);
         maskSlot.SetMask(race, GetSpriteByRace(race));
 
-		if (masks.Count >= maxMaskCount)
+		if (masks.Count >= LevelManager.Instance.MaxMaskCount)
 		{
             Debug.Log("Max masks reached");
-            //fire event for playerthat max masks reached
-            FindFirstObjectByType<Player>()?.SendMessage("OnMaxMasksReached", SendMessageOptions.DontRequireReceiver);
-			maskSlotGrid.GetComponent<GridLayoutGroup>().enabled = false;
-
+			//fire event for playerthat max masks reached
+			FindFirstObjectByType<Player>()?.SendMessage("OnMaxMasksReached", SendMessageOptions.DontRequireReceiver);
+            StartCoroutine(DisableGridLayout());
 			return true;
 		}
         return false;
+	}
+
+    private IEnumerator DisableGridLayout()
+    {
+        yield return new WaitForEndOfFrame();
+        maskSlotGrid.GetComponent<GridLayoutGroup>().enabled = false;
 	}
 
     private Sprite GetSpriteByRace(RacesEnumerator race)
