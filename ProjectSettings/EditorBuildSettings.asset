@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/RoseTest.unity
-    guid: 86fb8d7304a3b414b8de0d5119cfed84
+    path: Assets/Scenes/The Game.unity
+    guid: 5a68b885f9c512a45858b62ea1015168
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
