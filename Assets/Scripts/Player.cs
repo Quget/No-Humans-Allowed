@@ -17,7 +17,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private CameraThatFollowsATransform cameraThatFollows;
 
-    private IEnumerable<Lane> lanes;
+	private SelectedMasks selectedMasks;
+
+	private IEnumerable<Lane> lanes;
 
     private Lane targetLane = null;
     private Lane currentLane = null;
@@ -28,18 +30,17 @@ public class Player : MonoBehaviour
 	{
 		rigidbody2D = GetComponent<Rigidbody2D>();
 		lanes = Object.FindObjectsByType<Lane>(FindObjectsSortMode.None);
+		selectedMasks = Object.FindFirstObjectByType<SelectedMasks>();
 	}
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
     {
 
-		//cameraThatFollows.StartFollow(transform);
-		StartCoroutine(DelayedStart());
 	}
 	public IEnumerator DelayedStart()
 	{
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(2);
 		cameraThatFollows.StartFollow(transform);
 		cameraThatFollows.ReturnZoom();
 	}
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
     {
 		if (currentLane != null && currentLane.IsTransformPastLaneEnd(transform))
 		{
-			Debug.Log("You win!");
+			End();
 			return;
 		}
 
@@ -91,8 +92,6 @@ public class Player : MonoBehaviour
 					.FirstOrDefault(lane => up ? lane.transform.position.y > transform.position.y : lane.transform.position.y < transform.position.y);
     }
 
-
-
     private void Dash(bool up)
     {
         if (!isMovingToLane)
@@ -103,10 +102,28 @@ public class Player : MonoBehaviour
 			{
 				rigidbody2D.AddForce(direction * forceMode, ForceMode2D.Impulse);
 				isMovingToLane = true;
+
+				//Todo get race of group.
+				var groupRace = RacesEnumerator.FishFolk;
+				//try use mask
+				if (!selectedMasks.TryUseMask(groupRace))
+				{
+					Die();
+				}
 			}
 		}
-    }
+	}
 
+	private void End()
+	{
+		Debug.Log("You win!");
+	}
+
+	private void Die()
+	{
+		Debug.Log("You die");
+		Destroy(this.gameObject);
+	}
 
     private void Movement()
     {
@@ -114,5 +131,9 @@ public class Player : MonoBehaviour
         {
 			rigidbody2D.AddForce(Vector2.right * speed, ForceMode2D.Force);
 		}
+	}
+	public void OnMaxMasksReached()
+	{
+		StartCoroutine(DelayedStart());
 	}
 }
