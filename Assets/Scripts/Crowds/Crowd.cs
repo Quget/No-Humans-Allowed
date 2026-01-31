@@ -5,7 +5,7 @@ public class Crowd : MonoBehaviour
 {
 	public float CrowdLength = 1.0f;
 	public bool IsWalking = false;
-	public bool IsPreviewing = false;
+    public bool IsPreviewing = false;
 
 	public RacesEnumerator CrowdRace;
 	
@@ -13,6 +13,8 @@ public class Crowd : MonoBehaviour
 	private float speed = 0.5f;
 
 	private const float PREVIEW_SPEED_MULTIPLIER = 10;
+	
+    private bool HasWalked = false;
 
 	private Vector3 initialPosition;
 
@@ -24,7 +26,11 @@ public class Crowd : MonoBehaviour
 
     public void StartWalking()
 	{
-		IsWalking = true;
+        if (!HasWalked)
+        {
+            IsWalking = true;
+            HasWalked = true;
+        }
 	}
 
 	public void StopWalking()
@@ -36,6 +42,7 @@ public class Crowd : MonoBehaviour
     {
         transform.position = initialPosition;
 		IsWalking = false;
+        HasWalked = false;
     }
 
     // translate crowd over x axis
@@ -46,7 +53,7 @@ public class Crowd : MonoBehaviour
         // move crowd to the right over time
         if (IsWalking)
 			transform.Translate(speeeeed * Time.deltaTime * Vector3.right);
-	}
+    }
 
     private void OnDrawGizmos()
     {

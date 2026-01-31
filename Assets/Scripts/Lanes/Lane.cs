@@ -36,6 +36,11 @@ public class Lane : MonoBehaviour
 		float lanePosition = GetLanePosition(occ.crowd.transform.position);
 		occ.start = lanePosition - occ.crowd.CrowdLength / 2;
 		occ.end = lanePosition + occ.crowd.CrowdLength / 2;
+
+
+        // if crowd is at end stop it from going past lane length
+		if (occ.end > laneLength)
+			occ.crowd.StopWalking();
     }
 
     /// <summary>
