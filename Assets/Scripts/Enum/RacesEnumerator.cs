@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[System.Serializable]
 public enum RacesEnumerator
 {
 	Elf,

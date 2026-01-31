@@ -11,13 +11,30 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float forceMode = 5f;
 
-    [SerializeField]
+	[SerializeField]
+	private float equipDuration = 0.15f;
+
+	[SerializeField]
     private Rigidbody2D rigidbody2D;
 
-    [SerializeField]
+	[SerializeField]
+	private SpriteRenderer spriteRenderer;
+
+	[SerializeField]
+	private Sprite idleSprite;
+
+	[SerializeField]
+	private Sprite dashSprite;
+
+	[SerializeField]
+	private Sprite equipSprite;
+
+	[SerializeField]
     private CameraThatFollowsATransform cameraThatFollows;
 
-    private IEnumerable<Lane> lanes;
+	private SelectedMasks selectedMasks;
+
+	private IEnumerable<Lane> lanes;
 
     private Lane targetLane = null;
     private Lane currentLane = null;
@@ -28,18 +45,17 @@ public class Player : MonoBehaviour
 	{
 		rigidbody2D = GetComponent<Rigidbody2D>();
 		lanes = Object.FindObjectsByType<Lane>(FindObjectsSortMode.None);
+		selectedMasks = Object.FindFirstObjectByType<SelectedMasks>();
 	}
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
     {
 
-		//cameraThatFollows.StartFollow(transform);
-		StartCoroutine(DelayedStart());
 	}
 	public IEnumerator DelayedStart()
 	{
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(1);
 		cameraThatFollows.StartFollow(transform);
 		cameraThatFollows.ReturnZoom();
 	}
@@ -49,7 +65,7 @@ public class Player : MonoBehaviour
     {
 		if (currentLane != null && currentLane.IsTransformPastLaneEnd(transform))
 		{
-			Debug.Log("You win!");
+			End();
 			return;
 		}
 
@@ -63,6 +79,7 @@ public class Player : MonoBehaviour
 				currentLane = targetLane;
 				transform.position = new Vector3(transform.position.x, targetLane.transform.position.y, transform.position.z);
 				isMovingToLane = false;
+				SetIdleSprite();
 			}
 		}
     }
@@ -91,8 +108,6 @@ public class Player : MonoBehaviour
 					.FirstOrDefault(lane => up ? lane.transform.position.y > transform.position.y : lane.transform.position.y < transform.position.y);
     }
 
-
-
     private void Dash(bool up)
     {
         if (!isMovingToLane)
@@ -101,12 +116,20 @@ public class Player : MonoBehaviour
 			targetLane = FindLane(up);
 			if ((targetLane != null && currentLane != targetLane) || (currentLane == null && targetLane != null))
 			{
-				rigidbody2D.AddForce(direction * forceMode, ForceMode2D.Impulse);
-				isMovingToLane = true;
+				StartCoroutine(DashCoroutine(direction));
 			}
 		}
-    }
+	}
 
+	private void End()
+	{
+		Debug.Log("You win!");
+	}
+
+	private void Die()
+	{
+		Debug.Log("You die");
+	}
 
     private void Movement()
     {
@@ -114,5 +137,40 @@ public class Player : MonoBehaviour
         {
 			rigidbody2D.AddForce(Vector2.right * speed, ForceMode2D.Force);
 		}
+	}
+
+	private IEnumerator DashCoroutine(Vector2 direction)
+	{
+		SetSprite(equipSprite);
+		yield return new WaitForSeconds(equipDuration);
+		rigidbody2D.AddForce(direction * forceMode, ForceMode2D.Impulse);
+		isMovingToLane = true;
+		SetSprite(dashSprite);
+
+		//Todo get race of group.
+		var groupRace = RacesEnumerator.FishFolk;
+		//try use mask
+		if (!selectedMasks.TryUseMask(groupRace))
+		{
+			Die();
+		}
+	}
+
+	private void SetIdleSprite()
+	{
+		SetSprite(idleSprite);
+	}
+
+	private void SetSprite(Sprite sprite)
+	{
+		if (spriteRenderer != null)
+		{
+			spriteRenderer.sprite = sprite;
+		}
+	}
+
+	public void OnMaxMasksReached()
+	{
+		StartCoroutine(DelayedStart());
 	}
 }
