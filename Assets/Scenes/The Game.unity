@@ -1764,6 +1764,17 @@ Transform:
   - {fileID: 1736999497}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229048496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3668088022714375900, guid: 5c785f4103636c54cb05abceb3af0923, type: 3}
+  m_PrefabInstance: {fileID: 1560127096560615067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &1229108918 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3574487436915471210, guid: 8ba930e571bcc094d9b74836a48a88bb, type: 3}
@@ -73057,6 +73068,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6656440689870837640, guid: 5c785f4103636c54cb05abceb3af0923, type: 3}
+      propertyPath: PreviewButton
+      value: 
+      objectReference: {fileID: 1229048496}
     - target: {fileID: 6778518255015892417, guid: 5c785f4103636c54cb05abceb3af0923, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

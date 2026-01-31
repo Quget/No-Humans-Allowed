@@ -12,7 +12,7 @@ public class Crowd : MonoBehaviour
 	[SerializeField]
 	private float speed = 0.5f;
 
-	private const float PREVIEW_SPEED_MULTIPLIER = 10;
+	public static float PreviewSpeedMultiplier = 5;
 	
     private bool HasWalked = false;
 
@@ -48,7 +48,7 @@ public class Crowd : MonoBehaviour
     // translate crowd over x axis
     private void Update()
 	{
-		float speeeeed = IsPreviewing ? this.speed * PREVIEW_SPEED_MULTIPLIER : this.speed;
+		float speeeeed = IsPreviewing ? this.speed * PreviewSpeedMultiplier : this.speed;
 
         // move crowd to the right over time
         if (IsWalking)

@@ -1,29 +1,37 @@
-    using UnityEngine;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UserInterface : MonoBehaviour
 {
-    [SerializeField]
-    private MaskSelector maskSelector;
+	[SerializeField]
+	private MaskSelector maskSelector;
 
-    [SerializeField]
-    private GameObject maskSelectorButton;
+	[SerializeField]
+	private GameObject maskSelectorButton;
 
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
-    {
-        
-    }
+	[SerializeField]
+	private Button PreviewButton;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OpenMaskSelector()
-    {
+	public void OpenMaskSelector()
+	{
 		maskSelectorButton.SetActive(false);
-        maskSelector.Open();
+		PreviewButton.gameObject.SetActive(false);
+		maskSelector.Open();
 	}
+
+	public void StartPreview()
+	{
+		Debug.Log("Start preview");
+		MasterLane.Instance.StartAutoPlay();
+	}
+
+    public void Update()
+    {
+        // makes sure you cannot start previewing whisle already previewing :D
+  //      if (MasterLane.Instance.IsAutoPlaying)
+		//	PreviewButton.interactable = false;
+		//else 
+		//	PreviewButton.interactable = true;
+    }
 }

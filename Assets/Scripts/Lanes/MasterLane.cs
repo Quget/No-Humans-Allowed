@@ -33,18 +33,17 @@ public class MasterLane : MonoBehaviour
 
 	public void SetCurrentProgress(float progress)
 	{
-		CurrentProgress = progress;
+		if(!IsAutoPlaying)
+			CurrentProgress = progress;
 	}
 
 	public void StartAutoPlay()
 	{
-		// get all crowds
+		IsAutoPlaying = true;
 
-		// set all crowds to previewing
-		foreach (Crowd crowd in allCrowds)
+        // set all crowds to previewing
+        foreach (Crowd crowd in allCrowds)
 			crowd.IsPreviewing = true;
-
-
 	}
 
     private void Update()

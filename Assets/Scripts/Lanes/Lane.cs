@@ -55,10 +55,9 @@ public class Lane : MonoBehaviour
 			if (position >= occ.start && position <= occ.end)
 				return (true, occ.crowd);
 		}
+
 		return (false, null);
 	}
-
-	
 
     /// <summary>
     /// gets the position along the lane (0 to laneLength) for a given world position
