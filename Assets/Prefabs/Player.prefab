@@ -48,7 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 5
   forceMode: 20
+  equipDuration: 0.15
   rigidbody2D: {fileID: 2123113235427089081}
+  spriteRenderer: {fileID: 7573108959156573369}
+  idleSprite: {fileID: 21300000, guid: 6a84f9aa372d73f498ff2f5569f84477, type: 3}
+  dashSprite: {fileID: 21300000, guid: 665c8b5b2e6e5764e8aa245a56b4357f, type: 3}
+  equipSprite: {fileID: 21300000, guid: 91a7335d09baf684fb16bbe4f87c77e1, type: 3}
   cameraThatFollows: {fileID: 0}
 --- !u!50 &2123113235427089081
 Rigidbody2D:
@@ -103,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 5726185207040425916}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -158,12 +163,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6a84f9aa372d73f498ff2f5569f84477, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.48, y: 2.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
