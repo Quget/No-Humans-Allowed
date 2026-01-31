@@ -42,5 +42,15 @@ public class CrowdTrigger : MonoBehaviour
 		Gizmos.DrawCube(transform.position, new Vector3(0.5f, 0.5f, 0.5f));
 		Gizmos.DrawLine(transform.position, transform.position + Vector3.up * 10f);
 
+        // draw lines to each crowd to visualize which crowds will be triggered
+        foreach (var crowd in crowdsToTrigger)
+		{
+			if (crowd != null)
+			{
+				Gizmos.color = Color.cyan;
+				Gizmos.DrawLine(transform.position, crowd.transform.position);
+			}
+        }
+
     }
 }

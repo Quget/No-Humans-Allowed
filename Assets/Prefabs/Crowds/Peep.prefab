@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Peepwiggler
   RotationWiggleAmount: 0.5
-  TranslationWiggleAmount: 0.5
+  TranslationWiggleAmount: 10
 --- !u!114 &7159473708284497151
 MonoBehaviour:
   m_ObjectHideFlags: 0
