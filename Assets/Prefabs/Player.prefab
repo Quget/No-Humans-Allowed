@@ -180,7 +180,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 08e9fef1449bc27449338eee728473e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -203,7 +203,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Time: 0.4
+  m_Time: 1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -262,14 +262,14 @@ TrailRenderer:
       m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 15
+    numCapVertices: 22
     alignment: 0
     textureMode: 0
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.01
+  m_MinVertexDistance: 0.00001
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
@@ -283,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4927357241773931881}
   - component: {fileID: 7573108959156573369}
+  - component: {fileID: 5726452568617240673}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -364,3 +365,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &5726452568617240673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5726185207040425916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f1c33f65c24ef47b8417db845fc489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PeepWiggler
+  RotationWiggleAmount: 5
+  TranslationWiggleAmount: 5
+  baseWiggleSpeed: 2
+  speedMultiplier: 5
