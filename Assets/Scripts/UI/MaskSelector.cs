@@ -25,6 +25,6 @@ public class MaskSelector : MonoBehaviour
 
     public void Close()
     {
-        gameObject.SetActive(false);
+		gameObject.SetActive(false);
 	}
 }

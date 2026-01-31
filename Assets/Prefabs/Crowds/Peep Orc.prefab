@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1079058511324329692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1177880272569121187, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_Name
+      value: Peep Orc
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110730003324848910, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159473708284497151, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: sprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159473708284497151, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: 'sprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: -3790383637788834040, guid: 5b82202fd49783f44a7770a3d125f200, type: 3}
+    - target: {fileID: 7159473708284497151, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: 'sprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1739242045468157104, guid: 3af143f771d034d4aa6485b35e5cc438, type: 3}
+    - target: {fileID: 7159473708284497151, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: 'sprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: -8505298385123301557, guid: ba464da87e84fed4fa4115d6c8dcf7b3, type: 3}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177954016050238606, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193289566253574353, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3790383637788834040, guid: 5b82202fd49783f44a7770a3d125f200, type: 3}
+    - target: {fileID: 8193289566253574353, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4240649
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193289566253574353, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193289566253574353, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.32974365
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3ef3e701605f2c48a70a886b9a1996c, type: 3}

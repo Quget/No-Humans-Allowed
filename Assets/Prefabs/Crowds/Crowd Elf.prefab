@@ -1,5 +1,315 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &784609548537949539
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4922673163535415098}
+    m_Modifications:
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115927234072988945, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_Name
+      value: Peep Elf
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+--- !u!4 &650455838296788319 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+  m_PrefabInstance: {fileID: 784609548537949539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1687077974236013779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4922673163535415098}
+    m_Modifications:
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115927234072988945, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_Name
+      value: Peep Elf (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+--- !u!4 &1480602787166323951 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+  m_PrefabInstance: {fileID: 1687077974236013779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1901672883400765363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4922673163535415098}
+    m_Modifications:
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115927234072988945, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_Name
+      value: Peep Elf (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+--- !u!4 &1837896840001998735 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+  m_PrefabInstance: {fileID: 1901672883400765363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1948267678854307821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4922673163535415098}
+    m_Modifications:
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115927234072988945, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_Name
+      value: Peep Elf (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+--- !u!4 &1795879864944164817 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+  m_PrefabInstance: {fileID: 1948267678854307821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3696266651325936785
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4922673163535415098}
+    m_Modifications:
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115927234072988945, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+      propertyPath: m_Name
+      value: Peep Elf (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+--- !u!4 &3507841175721481389 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 280802184247484476, guid: 876eb197b1e3a3a49acef2de26ea8101, type: 3}
+  m_PrefabInstance: {fileID: 3696266651325936785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8017815854124683843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,10 +360,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8582096188668082207, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
       propertyPath: m_Name
-      value: Crowd
+      value: Crowd Elf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5729500873214615892, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3104625163689829753, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 650455838296788319}
+    - targetCorrespondingSourceObject: {fileID: 3104625163689829753, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3507841175721481389}
+    - targetCorrespondingSourceObject: {fileID: 3104625163689829753, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1837896840001998735}
+    - targetCorrespondingSourceObject: {fileID: 3104625163689829753, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1795879864944164817}
+    - targetCorrespondingSourceObject: {fileID: 3104625163689829753, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1480602787166323951}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
+--- !u!4 &4922673163535415098 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3104625163689829753, guid: a555afb50d0b8f1409283b560c99f15a, type: 3}
+  m_PrefabInstance: {fileID: 8017815854124683843}
+  m_PrefabAsset: {fileID: 0}

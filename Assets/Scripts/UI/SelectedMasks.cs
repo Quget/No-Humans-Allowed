@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class SelectedMasks : MonoBehaviour
 {
-    private int maxMaskCount = 5;
+	[SerializeField]
+	private int maxMaskCount = 8;
 
 	[SerializeField]
     private MaskSlot maskSlotPrefab;

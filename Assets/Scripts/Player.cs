@@ -48,11 +48,6 @@ public class Player : MonoBehaviour
 		selectedMasks = Object.FindFirstObjectByType<SelectedMasks>();
 	}
 
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
-    {
-
-	}
 	public IEnumerator DelayedStart()
 	{
 		yield return new WaitForSeconds(1);
@@ -69,6 +64,11 @@ public class Player : MonoBehaviour
 			return;
 		}
 
+		if (currentLane != null && !currentLane.GetCrowdAtPosition(currentLane.GetLanePosition(transform.position)).Item1)
+		{
+			Die();
+			return;
+		}
 		PlayerInput();
 
 		if (targetLane != null)
@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
 
     private void PlayerInput()
     {
+
 		if (Input.GetKeyDown(KeyCode.S))
 		{
 			Dash(false);
@@ -123,7 +124,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	private void End()
+	public void End()
 	{
 		Debug.Log("You win!");
 	}
