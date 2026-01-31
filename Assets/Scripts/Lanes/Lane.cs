@@ -64,11 +64,12 @@ public class Lane : MonoBehaviour
     /// </summary>
     public float GetLanePosition(Vector3 position)
 	{
-		// idk this code didn't work right but if we keep everything at the origin it works /shrug
-        return position.x;
-	}
+        // convert world position to local position
+		Vector3 localPos = transform.InverseTransformPoint(position);
+		return localPos.x;
+    }
 
-	private void OnDrawGizmos()
+    private void OnDrawGizmos()
 	{
 		Gizmos.color = Color.blue;
 
