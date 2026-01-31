@@ -32,7 +32,12 @@ public class Player : MonoBehaviour
 	[SerializeField]
     private CameraThatFollowsATransform cameraThatFollows;
 
+	[SerializeField]
+	private AudioSource dieSound;
+
 	private SelectedMasks selectedMasks;
+
+    private bool isDead;
 
 	private IEnumerable<Lane> lanes;
 
@@ -55,39 +60,46 @@ public class Player : MonoBehaviour
 		cameraThatFollows.ReturnZoom();
 	}
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
     {
+        if (isDead) return;
+
         UpdateMasterLanePosition();
 
-
         if (currentLane != null && MasterLane.Instance.IsTransformPastLaneEnd(transform))
-		{
-			End();
-			return;
-		}
-
-		if (currentLane != null && !currentLane.GetCrowdAtPosition(currentLane.GetLanePosition(transform.position)).Item1)
-		{
-			Die();
-			return;
-		}
-		PlayerInput();
-
-		if (targetLane != null)
         {
-            if(Mathf.Abs(transform.position.y - targetLane.transform.position.y) < laneSwitchThreshold)
+            End();
+            return;
+        }
+
+        // FIX: Only check for crowd death if we AREN'T currently dashing/switching
+        if (!isMovingToLane && currentLane != null)
+        {
+            var crowdInfo = currentLane.GetCrowdAtPosition(currentLane.GetLanePosition(transform.position));
+            if (!crowdInfo.Item1)
+            {
+                Die();
+                return;
+            }
+        }
+
+        PlayerInput();
+
+        if (targetLane != null && isMovingToLane)
+        {
+            if (Mathf.Abs(transform.position.y - targetLane.transform.position.y) < laneSwitchThreshold)
             {
                 rigidbody2D.linearVelocityY = 0f;
-				currentLane = targetLane;
-				transform.position = new Vector3(transform.position.x, targetLane.transform.position.y, transform.position.z);
-				isMovingToLane = false;
-				SetIdleSprite();
-			}
-		}
-
+                currentLane = targetLane; // Successfully switched!
+                transform.position = new Vector3(transform.position.x, targetLane.transform.position.y, transform.position.z);
+                isMovingToLane = false;
+                SetIdleSprite();
+            }
+        }
     }
-	private void FixedUpdate()
+
+    private void FixedUpdate()
 	{
 		Movement();
 	}
@@ -117,33 +129,40 @@ public class Player : MonoBehaviour
     {
         if (!isMovingToLane)
         {
-			var direction = up ? Vector2.up : Vector2.down;
-			targetLane = FindLane(up);
-			if ((targetLane != null && currentLane != targetLane) || (currentLane == null && targetLane != null))
-			{
-				StartCoroutine(DashCoroutine(direction));
-			}
-		}
-	}
+            targetLane = FindLane(up);
+            if (targetLane != null)
+            {
+                isMovingToLane = true; 
+                var direction = up ? Vector2.up : Vector2.down;
+                StartCoroutine(DashCoroutine(direction));
+            }
+        }
+    }
 
-	public void End()
+    public void End()
 	{
 		Debug.Log("You win!");
 	}
 
-	private void Die()
-	{
-		Debug.Log("You die");
-	}
+    private void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        Debug.Log("You die");
+        rigidbody2D.linearVelocity = Vector2.zero; // Stop moving
+        dieSound.Play();
+        // Maybe trigger a reload or game over UI here
+    }
 
-	private void UpdateMasterLanePosition()
+    private void UpdateMasterLanePosition()
 	{
 		MasterLane lane = MasterLane.Instance;
 
+		float progress = lane.GetLanePosition(transform.position);
+		lane.SetCurrentProgress(progress);
+
 		if (lane != null && currentLane != null)
 		{
-			float progress = currentLane.GetLanePosition(transform.position);
-			lane.SetCurrentProgress(progress);
         }
     }
 
@@ -155,24 +174,28 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	private IEnumerator DashCoroutine(Vector2 direction)
-	{
-		SetSprite(equipSprite);
-		yield return new WaitForSeconds(equipDuration);
-		rigidbody2D.AddForce(direction * forceMode, ForceMode2D.Impulse);
-		isMovingToLane = true;
-		SetSprite(dashSprite);
+    private IEnumerator DashCoroutine(Vector2 direction)
+    {
+        SetSprite(equipSprite);
+        yield return new WaitForSeconds(equipDuration);
 
-		//Todo get race of group.
-		var groupRace = targetLane.GetCrowdAtPosition(targetLane.GetLanePosition(transform.position));
-        //try use mask
+        // Clear vertical velocity
+        rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, 0);
+        rigidbody2D.AddForce(direction * forceMode, ForceMode2D.Impulse);
+        SetSprite(dashSprite);
+
+        // CHECK MASK HERE
+        float progressAtTarget = targetLane.GetLanePosition(transform.position);
+        var groupRace = targetLane.GetCrowdAtPosition(progressAtTarget);
+
+        // If there's no crowd to move into, OR we fail to use the mask, we die.
         if (!groupRace.Item1 || !selectedMasks.TryUseMask(groupRace.Item2.CrowdRace))
-		{
-			Die();
-		}
-	}
+        {
+            Die();
+        }
+    }
 
-	private void SetIdleSprite()
+    private void SetIdleSprite()
 	{
 		SetSprite(idleSprite);
 	}

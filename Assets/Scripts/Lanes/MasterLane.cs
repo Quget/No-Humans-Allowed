@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class MasterLane : MonoBehaviour
 {
@@ -25,13 +26,12 @@ public class MasterLane : MonoBehaviour
 
     }
 
-    public float GetLanePosition(Vector3 worldPosition)
-	{
-		Vector3 localPos = transform.InverseTransformPoint(worldPosition);
-		return Mathf.Clamp(localPos.x, 0, LaneLength);
+    public float GetLanePosition(Vector2 worldPosition)
+    {
+		return worldPosition.x;
     }
 
-	public void SetCurrentProgress(float progress)
+    public void SetCurrentProgress(float progress)
 	{
 		if(!IsAutoPlaying)
 			CurrentProgress = progress;
@@ -67,8 +67,8 @@ public class MasterLane : MonoBehaviour
 					allCrowds[i].StopWalking();
                 }
 
+				CurrentProgress = 0;
             }
-            CurrentProgress = 0;
             IsAtEnd.Invoke();
         }
     }
