@@ -157,6 +157,20 @@ public class Player : MonoBehaviour
         rigidbody2D.linearVelocity = Vector2.zero; // Stop moving
         dieSound?.Play();
         // Maybe trigger a reload or game over UI here
+
+        // make the player spin
+        rigidbody2D.freezeRotation = false;
+        rigidbody2D.AddTorque(10f, ForceMode2D.Impulse);
+        rigidbody2D.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+
+        Invoke(nameof(StopDeathSpin), 1f);
+    }
+
+    private void StopDeathSpin()
+    {
+        
+        rigidbody2D.linearDamping = 10f;
+        rigidbody2D.angularDamping = 10f;
     }
 
     private void UpdateMasterLanePosition()

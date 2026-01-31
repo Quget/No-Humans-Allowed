@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace1a2c1cf7f9154e9146953880ab18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crowd
-  CrowdLength: 5.5
+  CrowdLength: 7
   IsWalking: 0
   IsPreviewing: 0
   CrowdRace: 0
