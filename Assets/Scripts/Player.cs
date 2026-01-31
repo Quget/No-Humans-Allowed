@@ -50,10 +50,10 @@ public class Player : MonoBehaviour
 	{
 		rigidbody2D = GetComponent<Rigidbody2D>();
 		lanes = Object.FindObjectsByType<Lane>(FindObjectsSortMode.None);
-		selectedMasks = Object.FindFirstObjectByType<SelectedMasks>();
-	}
+        selectedMasks = Object.FindFirstObjectByType<SelectedMasks>();
+    }
 
-	public IEnumerator DelayedStart()
+    public IEnumerator DelayedStart()
 	{
 		yield return new WaitForSeconds(1);
 		cameraThatFollows.StartFollow(transform);
@@ -88,8 +88,12 @@ public class Player : MonoBehaviour
 
         if (targetLane != null && isMovingToLane)
         {
-            if (Mathf.Abs(transform.position.y - targetLane.transform.position.y) < laneSwitchThreshold)
-            {
+			//Aggressive check to see if we've reached the target lane
+			var currentY = currentLane == null ? transform.position.y : currentLane.transform.position.y;
+			bool goingLaneUp = targetLane.transform.position.y > currentY;
+            if((goingLaneUp && transform.position.y >= targetLane.transform.position.y - laneSwitchThreshold) ||
+               (!goingLaneUp && transform.position.y <= targetLane.transform.position.y + laneSwitchThreshold))
+			{
                 rigidbody2D.linearVelocityY = 0f;
                 currentLane = targetLane; // Successfully switched!
                 transform.position = new Vector3(transform.position.x, targetLane.transform.position.y, transform.position.z);
@@ -120,7 +124,8 @@ public class Player : MonoBehaviour
 
 	private Lane FindLane(bool up)
     {
-        return lanes.OrderBy(lane => up ? lane.transform.position.y - transform.position.y : transform.position.y - lane.transform.position.y)
+        return lanes.OrderBy(lane => Vector3.Distance(transform.position, lane.transform.position))
+                    .ThenBy(lane => up ? lane.transform.position.y - transform.position.y : transform.position.y - lane.transform.position.y)
                     .Where( lane => lane != targetLane)
 					.FirstOrDefault(lane => up ? lane.transform.position.y > transform.position.y : lane.transform.position.y < transform.position.y);
     }
@@ -150,7 +155,7 @@ public class Player : MonoBehaviour
         isDead = true;
         Debug.Log("You die");
         rigidbody2D.linearVelocity = Vector2.zero; // Stop moving
-        dieSound.Play();
+        dieSound?.Play();
         // Maybe trigger a reload or game over UI here
     }
 
@@ -183,7 +188,7 @@ public class Player : MonoBehaviour
         rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, 0);
         rigidbody2D.AddForce(direction * forceMode, ForceMode2D.Impulse);
         SetSprite(dashSprite);
-
+        
         // CHECK MASK HERE
         float progressAtTarget = targetLane.GetLanePosition(transform.position);
         var groupRace = targetLane.GetCrowdAtPosition(progressAtTarget);
