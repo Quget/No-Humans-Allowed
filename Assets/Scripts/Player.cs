@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 	}
 	public IEnumerator DelayedStart()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		cameraThatFollows.StartFollow(transform);
 		cameraThatFollows.ReturnZoom();
 	}
