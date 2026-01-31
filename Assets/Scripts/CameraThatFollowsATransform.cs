@@ -15,6 +15,11 @@ public class CameraThatFollowsATransform : MonoBehaviour
 
 	private float startZoom = 0f;
 
+	public void Awake()
+	{
+		SetUp();
+	}
+
 	public void SetUp()
 	{
 		startZoom = Camera.main.orthographicSize;

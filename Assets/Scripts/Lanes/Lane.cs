@@ -19,4 +19,9 @@ public class Lane : MonoBehaviour
 			Gizmos.DrawSphere(transform.position + transform.right * i, 0.1f);
 		}
     }
+
+	public bool IsTransformPastLaneEnd(Transform otherTransform)
+	{
+		return otherTransform.position.x > transform.position.x + laneLength;
+	}
 }
