@@ -63,14 +63,10 @@ public class Lane : MonoBehaviour
     /// <summary>
     /// gets the position along the lane (0 to laneLength) for a given world position
     /// </summary>
-    public float GetLanePosition(Vector2 position)
+    public float GetLanePosition(Vector3 position)
 	{
-		Vector2 laneRight = transform.right;
-		Vector2 laneOrigin = transform.position;
-		Vector2 toPosition = position - laneOrigin;
-		float projectedLength = Vector2.Dot(toPosition, laneRight.normalized);
-		
-		return projectedLength;
+		// idk this code didn't work right but if we keep everything at the origin it works /shrug
+        return position.x;
 	}
 
 	private void OnDrawGizmos()

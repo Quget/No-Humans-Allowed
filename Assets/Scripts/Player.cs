@@ -58,7 +58,10 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		if (currentLane != null && MasterLane.Instance.IsTransformPastLaneEnd(transform))
+        UpdateMasterLanePosition();
+
+
+        if (currentLane != null && MasterLane.Instance.IsTransformPastLaneEnd(transform))
 		{
 			End();
 			return;
@@ -83,7 +86,6 @@ public class Player : MonoBehaviour
 			}
 		}
 
-        UpdateMasterLanePosition();
     }
 	private void FixedUpdate()
 	{
